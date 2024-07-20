@@ -1,0 +1,13 @@
+svg {
+  width: 22px;
+  height: 22px;
+  path {
+    transition: fill 0.3s ease-in-out;
+    fill: var(--angular-pass-border-color);
+  }
+  &.active {
+    path {
+      fill: var(--angular-pass-coral-color);
+    }
+  }
+}

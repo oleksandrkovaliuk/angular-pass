@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+:root {
+  --angular-pass-Nunito-Sans-font: "Nunito Sans", sans-serif;
+  --angular-pass-background-color: #ebebeb;
+  --angular-pass-white-color: #ffffff;
+  --angular-pass-black-color: #000000;
+  --angular-pass-border-color: #ddd;
+  --angular-pass-coral-color: #ff394c;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+}
+button {
+  background-color: unset;
+  border: none;
+}
+button,
+svg,
+li,
+a {
+  cursor: pointer;
+}
+a {
+  text-decoration: unset;
+}

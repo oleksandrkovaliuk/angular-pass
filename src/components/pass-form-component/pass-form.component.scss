@@ -1,0 +1,121 @@
+.form_container {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: 1px solid var(--angular-pass-border-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .form_title {
+    font-family: var(--angular-pass-Nunito-Sans-font);
+    font-size: clamp(20px, 5vw, 25px);
+    font-weight: 700;
+    color: var(--angular-pass-coral-color);
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .form_button {
+    padding: 5px 10px;
+    border: 1px solid var(--angular-pass-coral-color);
+    background-color: var(--angular-pass-coral-color);
+    border-radius: 5px;
+    max-width: 100%;
+    width: 100%;
+    color: var(--angular-pass-white-color);
+    font-size: 15px;
+    font-weight: 600;
+    font-family: var(--angular-pass-Nunito-Sans-font);
+    margin-bottom: 5px;
+  }
+}
+
+.input_wrap {
+  position: relative;
+  margin-bottom: 35px;
+  .input_field {
+    .form_input {
+      box-shadow: 0 0 0 2px rgba(255, 57, 92, 0);
+      border: 1px solid var(--angular-pass-border-color);
+      border-radius: 8px;
+      padding: 15px 15px 10px;
+
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--angular-pass-black-color);
+      font-family: var(--angular-pass-Nunito-Sans-font);
+
+      max-width: 100%;
+      width: 100%;
+
+      transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+      &:active,
+      &:focus,
+      &:not(:placeholder-shown) {
+        outline: none;
+        border: 1px solid var(--angular-pass-coral-color);
+        box-shadow: 0 0 0 2px rgba(255, 57, 92, 0.7);
+      }
+      &:active + .form_label,
+      &:focus + .form_label,
+      &:not(:placeholder-shown) + .form_label {
+        top: 10px;
+        font-size: 10px;
+        color: var(--angular-pass-coral-color);
+      }
+    }
+    .form_label {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      right: 10px;
+      transform: translateY(-50%);
+
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--angular-pass-border-color);
+      font-family: var(--angular-pass-Nunito-Sans-font);
+      pointer-events: none;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  .show_password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.password_strength {
+  display: flex;
+  border-radius: 5px;
+  width: 100%;
+  height: 5px;
+  background-color: var(--angular-pass-border-color);
+  position: absolute;
+  bottom: -15px;
+  &::before {
+    content: "";
+    height: 5px;
+    width: 0%;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    will-change: transform;
+  }
+  &.easy::before {
+    width: 33%;
+    background-color: green;
+  }
+  &.medium::before {
+    width: 66%;
+    background-color: orange;
+  }
+  &.hard::before {
+    width: 100%;
+    background-color: var(--angular-pass-coral-color);
+  }
+}

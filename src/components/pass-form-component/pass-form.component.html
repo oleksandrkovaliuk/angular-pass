@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit($event)" class="form_container">
+  <h2 class="form_title">Test task </h2>
+  <div class="input_wrap">
+    <div class="input_field">
+      <input type="password" formControlName="password" class="form_input" placeholder=""
+        [type]="show_password ? 'text' : 'password'" />
+      <label for="password" class="form_label">Password</label>
+    </div>
+
+    <button class="show_password" (click)="togglePasswordVisibility($event)">
+      <abbr title="Show password">
+        <app-eyes-icon class="eyes-icon" [class]="show_password ? 'active' : 'hide'"></app-eyes-icon>
+      </abbr>
+    </button>
+
+    <div class="password_strength"></div>
+  </div>
+
+  <button type="submit" class="form_button" [disabled]="form.invalid">Submit</button>
+</form>
