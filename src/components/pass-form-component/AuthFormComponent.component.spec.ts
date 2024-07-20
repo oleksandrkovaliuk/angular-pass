@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PassForm } from './pass-form.component';
+import { AuthFormComponent } from './AuthFormComponent.component';
 
 describe('PassForm', () => {
-  let component: PassForm;
-  let fixture: ComponentFixture<PassForm>;
+  let component: AuthFormComponent;
+  let fixture: ComponentFixture<AuthFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PassForm],
+      imports: [AuthFormComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PassForm);
+    fixture = TestBed.createComponent(AuthFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

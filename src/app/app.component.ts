@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PassForm } from '../components/pass-form-component/pass-form.component';
+import { AuthFormComponent } from '../components/pass-form-component/AuthFormComponent.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PassForm],
+  imports: [RouterOutlet, AuthFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
