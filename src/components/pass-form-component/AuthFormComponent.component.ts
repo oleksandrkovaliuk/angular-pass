@@ -6,13 +6,13 @@ import { RegExpPasswordValidation } from './types/enum';
 import { EyesIconComponent } from '../../svgs/eyes-icon/eyes-icon.component';
 
 @Component({
-  selector: 'app-pass-form',
+  selector: 'app-auth-form',
   standalone: true,
-  templateUrl: './pass-form.component.html',
-  styleUrls: ['./pass-form.component.scss'],
+  templateUrl: './AuthFormComponent.component.html',
+  styleUrls: ['./AuthFormComponent.component.scss'],
   imports: [ReactiveFormsModule, EyesIconComponent],
 })
-export class PassForm {
+export class AuthFormComponent {
   form: FormGroup;
   show_password: boolean = false;
 
@@ -35,6 +35,7 @@ export class PassForm {
       this.resetPasswordStrength(passwordLevelElement);
     }
   }
+
   private updatePasswordStrength(element: HTMLElement, password: string): void {
     this.resetPasswordStrength(element);
     if (new RegExp(RegExpPasswordValidation.EASY).test(password))
