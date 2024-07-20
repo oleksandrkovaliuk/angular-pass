@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { RegularExpression } from './types/enum';
+import { RegExpPasswordValidation } from './types/enum';
 import { EyesIconComponent } from '../../svgs/eyes-icon/eyes-icon.component';
 
 @Component({
@@ -15,11 +15,6 @@ import { EyesIconComponent } from '../../svgs/eyes-icon/eyes-icon.component';
 export class PassForm {
   form: FormGroup;
   show_password: boolean = false;
-  patterns = {
-    easy: RegularExpression.easy,
-    medium: RegularExpression.medium,
-    hard: RegularExpression.hard,
-  };
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -42,9 +37,12 @@ export class PassForm {
   }
   private updatePasswordStrength(element: HTMLElement, password: string): void {
     this.resetPasswordStrength(element);
-    if (this.patterns.easy.test(password)) element.classList.add('easy');
-    if (this.patterns.medium.test(password)) element.classList.add('medium');
-    if (this.patterns.hard.test(password)) element.classList.add('hard');
+    if (new RegExp(RegExpPasswordValidation.EASY).test(password))
+      element.classList.add('easy');
+    if (new RegExp(RegExpPasswordValidation.MEDIUM).test(password))
+      element.classList.add('medium');
+    if (new RegExp(RegExpPasswordValidation.HARD).test(password))
+      element.classList.add('hard');
   }
   private resetPasswordStrength(element: HTMLElement): void {
     element.classList.remove('easy', 'medium', 'hard');
